@@ -9,16 +9,20 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "webpack --mode development --config ./webpack.config.js"
+    "dev": "webpack --mode development --config ./webpack.config.js",
+    "tw": "npx tailwind --output ./app/dist/bundle.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-loader": "^8.2.3",
+    "css-loader": "^6.6.0",
     "electron": "^16.0.8",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.0.19",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2"
   },

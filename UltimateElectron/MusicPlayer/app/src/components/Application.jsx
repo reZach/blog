@@ -1,5 +1,5 @@
 import React from "react";
-import AlbumArt from "./AlbumArt.jsx";
+import AlbumArt from "./AlbumArt/AlbumArt.jsx";
 import SongList from "./SongList.jsx";
 
 class Application extends React.Component {

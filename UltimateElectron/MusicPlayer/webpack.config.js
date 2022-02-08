@@ -25,6 +25,18 @@ module.exports = {
                 use: {
                     loader: "html-loader"
                 }
+            },
+            {
+                // loads .css files,
+                // maybe? https://blog.logrocket.com/webpack-from-scratch-for-tailwind-css-with-react/
+                // https://www.youtube.com/watch?v=tM_S-pa4xDk
+                // https://davidtheclark.com/its-time-for-everyone-to-learn-about-postcss/
+                test: /\.css$/,
+                include: [path.resolve(__dirname, "app/src")],
+                use: [
+                    "style-loader",
+                    "css-loader"
+                ]
             }
         ]
     },

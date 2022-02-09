@@ -1,10 +1,10 @@
 import React from "react";
 
-import "./AlbumArt.css";
+//import "./AlbumArt.css";
 
 function AlbumArt(props) {
   return (
-    <div className="container">
+    <div>
       <img src={props} />
     </div>
   );

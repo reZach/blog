@@ -2,7 +2,7 @@ import React from "react";
 
 function SongList(props) {
   return (
-    <ol className="bg-gray-100">
+    <ol>
       <li>song 1</li>
       <li>song 2</li>
       <li>song 3</li>

@@ -36,7 +36,8 @@ module.exports = {
                 test: /\.css$/,
                 include: [path.resolve(__dirname, "app/src")],
                 use: [
-                    dev ? "style-loader" : MiniCssExtractPlugin.loader,
+                    //dev ? "style-loader" : MiniCssExtractPlugin.loader,
+                    "style-loader",
                     "css-loader",
                     "postcss-loader"
                 ]

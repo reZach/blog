@@ -9,8 +9,7 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "webpack --mode development --config ./webpack.config.js",
-    "tw": "npx tailwind --output ./app/dist/bundle.css --watch"
+    "dev": "webpack --mode development --config ./webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -26,7 +25,8 @@
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.19",
     "webpack": "^5.68.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
     "@babel/core": "^7.17.0",

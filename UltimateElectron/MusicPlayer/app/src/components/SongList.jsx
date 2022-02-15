@@ -4,6 +4,7 @@ function SongList(props) {
   return (
     <ol>
       <li>song 1</li>
+      <li>song 1.5</li>
       <li>song 2</li>
       <li>song 3</li>
     </ol>

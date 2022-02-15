@@ -17,8 +17,9 @@ function createWindow() {
         window.focus();
     });
 
-    // Load our HTML file
-    window.loadFile("app/dist/index.html");
+    // Load our HTML file    
+    //window.loadFile("app/dist/index.html");
+    window.loadURL("http://localhost:40992");
 }
 
 // This method is called when Electron

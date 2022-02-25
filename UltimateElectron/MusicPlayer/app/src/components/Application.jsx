@@ -4,12 +4,24 @@ import SongList from "./SongList.jsx";
 import Controls from "./Controls.jsx";
 
 class Application extends React.Component {
+    constructor(){
+        super();
+
+        this.state = {
+            songs: [
+                "song 1",
+                "song 2",
+                "song 3"
+            ]
+        };
+    }
+
     render() {
         return (
             <div className="h-full">
                 <div className="h-4/5 grid grid-cols-12 grid-rows-1 gap-0">
                     <div className="col-span-3 bg-gray-300 border-black border-l-2 border-t-2">
-                        {SongList()}
+                        {SongList(this.state.songs)}
                     </div>
                     <div className="col-span-9 border-black border-l-2 border-t-2 border-r-2">
                         {AlbumArt(

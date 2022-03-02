@@ -8,12 +8,26 @@ class Application extends React.Component {
         super();
 
         this.state = {
+            selectedSong: "",
             songs: [
                 "song 1",
                 "song 2",
                 "song 3"
             ]
         };
+
+        this.setSelectedSong = this.setSelectedSong.bind(this);
+        this.play = this.play.bind(this);
+    }
+
+    setSelectedSong(song){
+        this.setState(() => ({
+            selectedSong: song
+        }));
+    }
+
+    play(){
+        // play(selectedSong)
     }
 
     render() {
@@ -21,7 +35,11 @@ class Application extends React.Component {
             <div className="h-full">
                 <div className="h-4/5 grid grid-cols-12 grid-rows-1 gap-0">
                     <div className="col-span-3 bg-gray-300 border-black border-l-2 border-t-2">
-                        {SongList(this.state.songs)}
+                        {SongList({ 
+                            songs: this.state.songs,
+                            selected: this.state.selectedSong,
+                            selectSong: this.setSelectedSong
+                        })}
                     </div>
                     <div className="col-span-9 border-black border-l-2 border-t-2 border-r-2">
                         {AlbumArt(
@@ -30,7 +48,9 @@ class Application extends React.Component {
                     </div>
                 </div>
                 <div className="h-1/5 bg-gray-400 border-black border-2">
-                    {Controls()}
+                    {Controls({
+                        play: this.play
+                    })}
                 </div>
             </div>
         );

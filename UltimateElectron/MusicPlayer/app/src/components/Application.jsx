@@ -1,5 +1,5 @@
 import React from "react";
-import AlbumArt from "./AlbumArt/AlbumArt.jsx";
+import AlbumArt from "./AlbumArt.jsx";
 import SongList from "./SongList.jsx";
 import Controls from "./Controls.jsx";
 
@@ -9,10 +9,16 @@ class Application extends React.Component {
 
         this.state = {
             selectedSong: "",
+            selectedAlbumArt: "",
             songs: [
                 "song1",
                 "song2",
                 "song3"
+            ],
+            albumArt: [
+                "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+                "https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png",
+                "https://github.githubassets.com/favicons/favicon.svg"
             ]
         };
 
@@ -24,7 +30,8 @@ class Application extends React.Component {
 
     setSelectedSong(song){
         this.setState(() => ({
-            selectedSong: song
+            selectedSong: song,
+            selectedAlbumArt: this.state.albumArt[this.state.songs.indexOf(song)]
         }));
     }
 
@@ -67,9 +74,7 @@ class Application extends React.Component {
                         })}
                     </div>
                     <div className="col-span-9 border-black border-l-2 border-t-2 border-r-2">
-                        {AlbumArt(
-                            "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
-                        )}
+                        {AlbumArt(this.state.selectedAlbumArt)}
                     </div>
                 </div>
                 <div className="h-1/5 bg-gray-400 border-black border-2">

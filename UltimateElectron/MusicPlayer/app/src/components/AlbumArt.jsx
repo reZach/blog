@@ -1,7 +1,5 @@
 import React from "react";
 
-//import "./AlbumArt.css";
-
 function AlbumArt(props) {
   return (
     <div>

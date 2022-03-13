@@ -10,14 +10,16 @@ class Application extends React.Component {
         this.state = {
             selectedSong: "",
             songs: [
-                "song 1",
-                "song 2",
-                "song 3"
+                "song1",
+                "song2",
+                "song3"
             ]
         };
 
         this.setSelectedSong = this.setSelectedSong.bind(this);
         this.play = this.play.bind(this);
+        this.previous = this.previous.bind(this);
+        this.next = this.next.bind(this);
     }
 
     setSelectedSong(song){
@@ -27,7 +29,30 @@ class Application extends React.Component {
     }
 
     play(){
-        // play(selectedSong)
+        // Call the function defined in the preload file
+        window.api.musicplayer().play(this.state.selectedSong);        
+    }
+
+    previous(){
+        if (this.state.selectedSong !== ""){
+            let index = this.state.songs.indexOf(this.state.selectedSong);
+
+            if (index > 0){
+                index--;
+            }
+            this.setSelectedSong(this.state.songs[index]);
+        }
+    }
+
+    next(){
+        if (this.state.selectedSong !== ""){
+            let index = this.state.songs.indexOf(this.state.selectedSong);
+
+            if (index < this.state.songs.length - 1){
+                index++;
+            }
+            this.setSelectedSong(this.state.songs[index]);
+        }
     }
 
     render() {
@@ -49,7 +74,9 @@ class Application extends React.Component {
                 </div>
                 <div className="h-1/5 bg-gray-400 border-black border-2">
                     {Controls({
-                        play: this.play
+                        play: this.play,
+                        previous: this.previous,
+                        next: this.next
                     })}
                 </div>
             </div>

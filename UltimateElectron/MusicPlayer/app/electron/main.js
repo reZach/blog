@@ -1,15 +1,28 @@
 const {
     app,
-    BrowserWindow
+    BrowserWindow,
+    ipcMain
 } = require("electron");
+const path = require("path");
 const isDevelopment = process.env.NODE_ENV === "development";
+const { playSong } = require("../src/backend/musicplayer");
 
 function createWindow() {
     // Create a new window
     const window = new BrowserWindow({
         width: 800,
         height: 600,
-        show: false
+        show: false,
+        webPreferences: {
+            preload: path.join(__dirname, "preload.js")
+        }
+    });
+
+    // Event listeners to play music
+    ipcMain.on("PLAYMUSIC", (IpcMainEvent, args) => {
+        playSong(args.name, function(){
+            window.webContents.send("PLAYMUSICRESPONSE");
+        });
     });
 
     // Event listeners on the window

@@ -28,6 +28,20 @@ class Application extends React.Component {
         this.next = this.next.bind(this);
     }
 
+    componentDidMount(){
+        const _ = this;
+
+        window.api.menuControls().onPlay(function(){
+            return _.state.selectedSong;
+        });
+        window.api.menuControls().onPrevious(function(){
+            _.previous();
+        });
+        window.api.menuControls().onNext(function(){
+            _.next();
+        });
+    }
+
     setSelectedSong(song){
         this.setState(() => ({
             selectedSong: song,

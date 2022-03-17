@@ -3,6 +3,7 @@ const {
     BrowserWindow,
     ipcMain
 } = require("electron");
+const MenuBuilder = require("./menu");
 const path = require("path");
 const isDevelopment = process.env.NODE_ENV === "development";
 const { playSong } = require("../src/backend/musicplayer");
@@ -14,9 +15,14 @@ function createWindow() {
         height: 600,
         show: false,
         webPreferences: {
+            devTools: true,
             preload: path.join(__dirname, "preload.js")
         }
     });
+
+    // Create a custom menu
+    const menuBuilder = MenuBuilder();
+    menuBuilder.buildMenu();
 
     // Event listeners to play music
     ipcMain.on("PLAYMUSIC", (IpcMainEvent, args) => {
@@ -37,6 +43,16 @@ function createWindow() {
     } else {
         console.log("prod");
         window.loadFile("app/dist/index.html");
+    }
+
+    // Only do these things when in development
+    if (isDevelopment) {
+
+        // Errors are thrown if the dev tools are opened
+        // before the DOM is ready
+        window.webContents.once("dom-ready", () => {
+            window.webContents.openDevTools();
+        });
     }
 }
 

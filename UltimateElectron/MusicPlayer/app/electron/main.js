@@ -31,6 +31,11 @@ function createWindow() {
         });
     });
 
+    // Event listener for a custom context menu
+    window.webContents.on("context-menu", (event, params) => {
+        console.log(params);
+    });
+
     // Event listeners on the window
     window.webContents.on("did-finish-load", () => {
         window.show();

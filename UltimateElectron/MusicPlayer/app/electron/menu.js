@@ -4,19 +4,22 @@ const MenuBuilder = function(){
 
     const menuTemplate = [
         {
-            label: "Play",
+            label: "&Play",
+            accelerator: "CmdOrCtrl+Space",
             click: function(menuItem, browserWindow, event){
                 browserWindow.webContents.send("MENUPLAYMUSIC");
             }
         },
         {
             label: "Previous",
+            accelerator: "CmdOrCtrl+Left",
             click: function(menuItem, browserWindow, event){
                 browserWindow.webContents.send("MENUPREVIOUSSONG");
             }
         },
         {
             label: "Next",
+            accelerator: "CmdOrCtrl+Right",
             click: function(menuItem, browserWindow, event){
                 browserWindow.webContents.send("MENUNEXTSONG");
             }

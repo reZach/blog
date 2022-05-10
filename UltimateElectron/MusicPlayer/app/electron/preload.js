@@ -32,6 +32,11 @@ contextBridge.exposeInMainWorld("api", {
                 ipcRenderer.on("MENUNEXTSONG", (event, ...args) => {
                     func();
                 });
+            },
+            clearBindings: function(){
+                ipcRenderer.removeAllListeners("MENUPLAYMUSIC");
+                ipcRenderer.removeAllListeners("MENUPREVIOUSSONG");
+                ipcRenderer.removeAllListeners("MENUNEXTSONG");
             }
         }
     }

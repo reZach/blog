@@ -28,6 +28,10 @@ class Application extends React.Component {
         this.next = this.next.bind(this);
     }
 
+    componentWillUnmount(){
+        window.api.menuControls().clearBindings();
+    }
+
     componentDidMount(){
         const _ = this;
 

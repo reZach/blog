@@ -21,6 +21,7 @@
     "webpack-merge": "^5.8.0"
   },
   "scripts": {
+    "start": "npm run dev-server & npm run dev",
     "dev-server": "webpack serve --mode development --config ./webpack.development.js",
     "dev": "cross-env NODE_ENV=development electron .",
     "preprod": "webpack --mode production --config ./webpack.production.js",
@@ -32,6 +33,7 @@
     "dist-linux": "npm run preprod && electron-builder --linux",
     "dist-windows": "npm run preprod && electron-builder --windows"
   },
+  
   "build": {
     "productName": "MyProductName",
     "appId": "com.mycompany|electron.myproductname",

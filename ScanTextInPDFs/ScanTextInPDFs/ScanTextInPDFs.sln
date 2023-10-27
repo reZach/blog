@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanTextInPDFs", "ScanTextInPDFs.csproj", "{4261C802-344A-4745-9864-2698549632CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4261C802-344A-4745-9864-2698549632CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4261C802-344A-4745-9864-2698549632CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4261C802-344A-4745-9864-2698549632CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4261C802-344A-4745-9864-2698549632CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE9912D2-7DA6-40C1-8BE7-AA299429A465}
+	EndGlobalSection
+EndGlobal

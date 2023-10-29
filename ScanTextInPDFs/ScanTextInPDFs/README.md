@@ -1,0 +1,1 @@
+A sample program demonstrating the ability to read text from PDF files using C#.
